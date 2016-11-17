@@ -25,13 +25,25 @@ qmap(aruba, zoom=12, source="osm", color="bw")
 Arubamap2016 <- qmap(aruba, zoom=12, source="osm", color="bw")
 
 Arubamap2016 +
-        geom_point(aes(x=Lat, y=Long, colour=Type, size=Investment), 
-                   data=data2016)+ geom_point(shape=21, position = "jitter")+scale_colour_manual(values=cbPalette)+scale_size_area(max_size = 15)
-+Arubamap2016 <- qmap(aruba, zoom=12, source="osm", color="bw")
+       geom_point(aes(x=Lat, y=Long, colour=Type, size=Investment), 
+       data=data2016)+ geom_point(shape=23, position = "jitter")+
+       scale_size_area(max_size = 15)+theme(legend.title = element_text(colour="blue", size=16, face="bold"))+        
+       scale_color_discrete(name="2016") +         
+       theme (legend.text = element_text(colour="black", size=16),               
+       legend.justification=c(1,0), legend.position=c(1,0.5))
 
 
 Arubamap2017 <- qmap(aruba, zoom=12, source="osm", color="bw")
 Arubamap2017 +
-        geom_point(aes(x=Lat, y=Long, colour=Type, size=Investment), 
-                   data=data2017)+ geom_point(shape=21, position = "jitter")+scale_colour_manual(values=cbPalette)+scale_size_area(max_size = 15)
-+Arubamap2017 <- qmap(aruba, zoom=12, source="osm", color="bw")
+geom_point(aes(x=Lat, y=Long, colour=Type, size=Investment),        
+data=data2017)+ geom_point(shape=23, position = "jitter")+       
+scale_size_area(max_size = 15)+theme(legend.title = element_text(colour="blue", size=16, face="bold"))+               
+scale_color_discrete(name="2017") +                
+theme (legend.text = element_text(colour="black", size=16),                      
+legend.justification=c(1,0), legend.position=c(1,0.5))
+
+
+
+
+
+         
