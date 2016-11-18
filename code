@@ -18,29 +18,25 @@ cbPalette <- c("#E69F00", "#000000", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 # Different map types
 aruba <- "aruba"
 
-qmap(aruba, zoom=12, source="osm", color="bw")
-
-
-#Actual mapping
+# Actual mapping
 Arubamap2016 <- qmap(aruba, zoom=12, source="osm", color="bw")
 
-Arubamap2016 +
-       geom_point(aes(x=Lat, y=Long, colour=Type, size=Investment), 
-       data=data2016)+ geom_point(shape=23, position = "jitter")+
-       scale_size_area(max_size = 15)+theme(legend.title = element_text(colour="blue", size=16, face="bold"))+        
-       scale_color_discrete(name="2016") +         
-       theme (legend.text = element_text(colour="black", size=16),               
-       legend.justification=c(1,0), legend.position=c(1,0.5))
-
-
-Arubamap2017 <- qmap(aruba, zoom=12, source="osm", color="bw")
-Arubamap2017 +
-geom_point(aes(x=Lat, y=Long, colour=Type, size=Investment),        
-data=data2017)+ geom_point(shape=23, position = "jitter")+       
-scale_size_area(max_size = 15)+theme(legend.title = element_text(colour="blue", size=16, face="bold"))+               
-scale_color_discrete(name="2017") +                
-theme (legend.text = element_text(colour="black", size=16),                      
+Arubamap2016 +                
+geom_point(aes(x=Lat, y=Long, colour=Type, size=Investment),                   
+data=data2016)+ geom_point(shape=20)+scale_size_area(max_size = 70) +        
+theme(legend.title = element_text(colour="blue", size=16, face="bold"))+        
+scale_color_discrete(name="2016") +         
+theme (legend.text = element_text(colour="black", size=16),               
 legend.justification=c(1,0), legend.position=c(1,0.5))
+
+Arubamap2017 <- qmap(aruba, zoom=12, source="osm", color="bw") 
+Arubamap2017 +                
+geom_point(aes(x=Lat, y=Long, colour=Type, size=Investment),                   
+data=data2017)+ geom_point(shape=20)+scale_size_area(max_size = 70) +        
+theme(legend.title = element_text(colour="blue", size=16, face="bold"))+        
+scale_color_discrete(name="2017") +         
+theme (legend.text = element_text(colour="black", size=16),legend.justification=c(1,0), 
+legend.position=c(1,0.5))
 
 
 
